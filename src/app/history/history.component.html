@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <H4 class="text-center">Patient Blood Request</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-info">
+            <tr>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Patient Lastname</th>
+                <th scopr="'col">Phone Number</th>
+                <th scope="col">Patient Age</th>
+                <th scope="col">gender</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Date</th>
+                <!-- <th scope="col">Status</th> -->
+                
+            </tr>
+        </thead>
+        <tbody>
+           
+            <tr *ngFor= "let t of data,let i=index">
+                <td> {{t.Pusername}}</td>
+                <td>{{t.PLastname}}</td>
+                <td>{{t.PPhonenumber}}</td>
+                <td>{{t.Page}}</td>
+                <td>{{t.Pgender}}</td>
+                <td>{{t.Pbloodgroup}}</td>
+                <td>{{t.Punits}}</td>
+                <td>{{t.createdAt | date :'YYYY-MM-dd'}}</td>
+            </tr>
+
+        </tbody>
+    
+    </table>
+</div>

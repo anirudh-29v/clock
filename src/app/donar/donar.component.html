@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+
+        <div style="margin-left: 70px;" class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">DONATE BLOOD</h2>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="donationform">
+
+                    <div class="form-row">
+                        <div class="form-label">Username
+                            <input type="text" class=" form-control" formControlName="username" />
+                            <div *ngIf="donationform.controls['username'].touched && donationform.controls['username'].value === ''"
+                                class="error error-txt">
+                                The field is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="label">Lastname
+                            <input type="text" class="form-control" formControlName="Lastname" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="label">Phonenumber
+                            <input type="text" class="form-control" formControlName="phonenumber" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label">Blood Group</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="bloodgroup" formControlName="bloodgroup">
+                                        <option disabled="disabled" selected="selected">Choose option
+                                        </option>
+                                        <option>O+</option>
+                                        <option>O-</option>
+                                        <option>A+</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                        <option>AB+</option>
+                                        <option>AB-</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="label">Unit (in ml)
+
+
+                            <input type="number" class="form-control" formControlName="units" />
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <!-- <div class="form-group"> -->
+                        <div class="radio">
+                            <label>Gender:</label>
+                            <input type="radio" value="male" formControlName="gender">male
+                            <input type="radio" value="female" formControlName="gender">female
+                            <input type="radio" value="others" formControlName="gender">others
+                        </div>
+                        <!-- </div> -->
+                    </div>
+
+                    <div class="form-row">
+                        <div class="label">Age
+                            <input type="number" class="form-control" formControlName="age">
+                            <div *ngIf="donationform.controls['age'].touched && donationform.controls['age'].value === ''"
+                                class="error error-txt">
+                                The field is required.
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-row">
+                        <div>
+                            <button class="btn btn--radius-2 btn-danger" type="submit"
+                                (click)="donate()">DONATE</button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+
+
+            </div>
+        </div>
+    </div>

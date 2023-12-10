@@ -1,0 +1,33 @@
+<!-- <p>navbar works!</p> -->
+
+<nav style="background-color: #3fb28ead;" class="navbar navbar-expand-md navbar-dark ">
+  <a class="navbar-brand" href="javascript:void(0);" routerLink="/dashnav">BLOOD BANK</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <ul class="navbar-nav mr-auto">
+
+    <ng-container *ngIf="this.tservice.auth(); then authorized ;else notauthorized">
+
+    </ng-container>
+ <ng-template #notauthorized>
+  <li class="nav-item"><a class="nav-link" href="javascript:void(0);" routerLink="/register">Register</a></li>
+  <li><a class="nav-link" href="javascript:void(0);" routerLink="">Login</a></li>
+
+ </ng-template>
+
+      <ng-template #authorized>
+        <li class="nav-item"><a class="nav-link"   routerLink="/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/dashnav">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/donar">Donar</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/patient">Patient</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/history">Request History</a></li>
+        <li><a class="nav-link" href="javascript:void(0);"  routerLink="">Logout</a></li>
+      </ng-template>
+    
+    
+    </ul>
+
+  </div>
+</nav>
