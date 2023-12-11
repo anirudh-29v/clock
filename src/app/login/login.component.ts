@@ -21,9 +21,7 @@ export class LoginComponent {
         if (res) {
           const name = this.loginform.value.loginname
           const password = this.loginform.value.loginpassword
-          console.log(name, password)
           for (const itr of res) {
-            console.log(itr.username, itr.Password, "check itr")
             if (itr.username === name && itr.Password === password) {
               sessionStorage.setItem('data', res)
               this.route.navigate(['/home'])
