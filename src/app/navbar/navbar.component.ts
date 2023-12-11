@@ -8,5 +8,7 @@ import { TServiceService } from '../t-service.service';
 })
 export class NavbarComponent {
 constructor(public tservice:TServiceService){}
-
+logout(){
+  sessionStorage.clear();
+}
 }
