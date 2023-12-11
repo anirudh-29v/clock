@@ -36,7 +36,6 @@ export class TServiceService {
 
   }
   donar(data: any) {
-    console.log("posting",data)
     return this.http.post(this.serverurl.donardata, data)
   }
   getdonardata() {
@@ -48,7 +47,6 @@ export class TServiceService {
   }
 
   getpatientdata() {
-    console.log('checking')
     return this.http.get(this.serverurl.getpatient)
   }
 }

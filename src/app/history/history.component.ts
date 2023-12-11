@@ -14,13 +14,10 @@ export class HistoryComponent implements OnInit {
   ngOnInit() {
     this.tService.getpatientdata().subscribe(
       (response: any) => {
-        console.log('API Response donar:', response);
         if (response) {
           this.data = response
           // sessionStorage.setItem('data',response)
-          console.log('patient', this.data)
         }
-        // Handle the response here
       },
       error => {
         console.error('API Error:', error);
